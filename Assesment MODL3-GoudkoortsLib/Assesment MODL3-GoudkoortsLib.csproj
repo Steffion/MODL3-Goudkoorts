@@ -39,6 +39,26 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="GeneratedCode\Controller\BoardController.cs" />
+    <Compile Include="GeneratedCode\Controller\CartController.cs" />
+    <Compile Include="GeneratedCode\Controller\InputController.cs" />
+    <Compile Include="GeneratedCode\Controller\ShipController.cs" />
+    <Compile Include="GeneratedCode\Controller\StartController.cs" />
+    <Compile Include="GeneratedCode\Controller\WarehouseController.cs" />
+    <Compile Include="GeneratedCode\Model\Board.cs" />
+    <Compile Include="GeneratedCode\Model\Cart.cs" />
+    <Compile Include="GeneratedCode\Model\DockTrack.cs" />
+    <Compile Include="GeneratedCode\Model\EndTrack.cs" />
+    <Compile Include="GeneratedCode\Model\Player.cs" />
+    <Compile Include="GeneratedCode\Model\SeaRoute.cs" />
+    <Compile Include="GeneratedCode\Model\Ship.cs" />
+    <Compile Include="GeneratedCode\Model\SwitchTrack.cs" />
+    <Compile Include="GeneratedCode\Model\Track.cs" />
+    <Compile Include="GeneratedCode\Model\Warehouse.cs" />
+    <Compile Include="GeneratedCode\Model\YardTrack.cs" />
+    <Compile Include="GeneratedCode\View\BoardView.cs" />
+    <Compile Include="GeneratedCode\View\InputView.cs" />
+    <Compile Include="GeneratedCode\View\StartView.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

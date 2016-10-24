@@ -5,6 +5,10 @@ VisualStudioVersion = 12.0.21005.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{F088123C-0E9E-452A-89E6-6BA2F21D5CAC}") = "Assesment MODL3-Goudkoorts", "Assesment MODL3-Goudkoorts\Assesment MODL3-Goudkoorts.modelproj", "{96BC582D-5C02-42A7-889B-A63D94C8FD97}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Assesment MODL3-GoudkoortsLib", "Assesment MODL3-GoudkoortsLib\Assesment MODL3-GoudkoortsLib.csproj", "{966D2D08-3228-498E-8FF4-E12138820F45}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Goudkoorts", "Goudkoorts\Goudkoorts.csproj", "{CEBCCF9D-AAED-49FB-8BDA-E40EA34FD97B}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +19,14 @@ Global
 		{96BC582D-5C02-42A7-889B-A63D94C8FD97}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{96BC582D-5C02-42A7-889B-A63D94C8FD97}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{96BC582D-5C02-42A7-889B-A63D94C8FD97}.Release|Any CPU.Build.0 = Release|Any CPU
+		{966D2D08-3228-498E-8FF4-E12138820F45}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{966D2D08-3228-498E-8FF4-E12138820F45}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{966D2D08-3228-498E-8FF4-E12138820F45}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{966D2D08-3228-498E-8FF4-E12138820F45}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CEBCCF9D-AAED-49FB-8BDA-E40EA34FD97B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CEBCCF9D-AAED-49FB-8BDA-E40EA34FD97B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CEBCCF9D-AAED-49FB-8BDA-E40EA34FD97B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CEBCCF9D-AAED-49FB-8BDA-E40EA34FD97B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
