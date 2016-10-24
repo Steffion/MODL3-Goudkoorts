@@ -20,6 +20,11 @@ namespace Controller
 			set;
 		}
 
-	}
+
+        internal void Show()
+        {
+            throw new NotImplementedException();
+        }
+    }
 }
 
