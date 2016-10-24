@@ -6,13 +6,38 @@
 //------------------------------------------------------------------------------
 namespace View
 {
-	using System;
-	using System.Collections.Generic;
-	using System.Linq;
-	using System.Text;
+    using Model;
+    using System;
+    using System.Collections.Generic;
+    using System.Linq;
+    using System.Text;
 
 	public class BoardView
 	{
+        public Board Board;
+        public BoardView(Board board)
+        {
+            Board = board;
+        }
+
+        public void Show()
+        {
+            Console.WriteLine("BoardView.Show()");
+            //TODO
+
+            for (int x = 0; ; x++)
+            {
+                for (int y = 0; ; y++)
+                {
+                    Track track = Board.Tracks[x + "," + y];
+
+                    Console.Write("-");
+                    if (track is Track) {
+                        
+                    }
+                }
+            }
+        }
 	}
 }
 

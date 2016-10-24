@@ -3,11 +3,13 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2013
 VisualStudioVersion = 12.0.21005.1
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{F088123C-0E9E-452A-89E6-6BA2F21D5CAC}") = "Assesment MODL3-Goudkoorts", "Assesment MODL3-Goudkoorts\Assesment MODL3-Goudkoorts.modelproj", "{96BC582D-5C02-42A7-889B-A63D94C8FD97}"
+Project("{F088123C-0E9E-452A-89E6-6BA2F21D5CAC}") = "Ontwerp v1.0", "Assesment MODL3-Goudkoorts\Ontwerp v1.0.modelproj", "{96BC582D-5C02-42A7-889B-A63D94C8FD97}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Assesment MODL3-GoudkoortsLib", "Assesment MODL3-GoudkoortsLib\Assesment MODL3-GoudkoortsLib.csproj", "{966D2D08-3228-498E-8FF4-E12138820F45}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Goudkoorts v1.0", "Goudkoorts\Goudkoorts v1.0.csproj", "{CEBCCF9D-AAED-49FB-8BDA-E40EA34FD97B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Goudkoorts", "Goudkoorts\Goudkoorts.csproj", "{CEBCCF9D-AAED-49FB-8BDA-E40EA34FD97B}"
+Project("{F088123C-0E9E-452A-89E6-6BA2F21D5CAC}") = "Ontwerp v2.0", "Ontwerp v2.0\Ontwerp v2.0.modelproj", "{A8749CF0-F2C2-4631-B225-EE1CA782309E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Goudkoorts v2.0", "Ontwerp v2.0Lib\Goudkoorts v2.0.csproj", "{779CBE31-159C-4912-A03E-5F2F01E438E8}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -19,14 +21,18 @@ Global
 		{96BC582D-5C02-42A7-889B-A63D94C8FD97}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{96BC582D-5C02-42A7-889B-A63D94C8FD97}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{96BC582D-5C02-42A7-889B-A63D94C8FD97}.Release|Any CPU.Build.0 = Release|Any CPU
-		{966D2D08-3228-498E-8FF4-E12138820F45}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{966D2D08-3228-498E-8FF4-E12138820F45}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{966D2D08-3228-498E-8FF4-E12138820F45}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{966D2D08-3228-498E-8FF4-E12138820F45}.Release|Any CPU.Build.0 = Release|Any CPU
 		{CEBCCF9D-AAED-49FB-8BDA-E40EA34FD97B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{CEBCCF9D-AAED-49FB-8BDA-E40EA34FD97B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CEBCCF9D-AAED-49FB-8BDA-E40EA34FD97B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{CEBCCF9D-AAED-49FB-8BDA-E40EA34FD97B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A8749CF0-F2C2-4631-B225-EE1CA782309E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A8749CF0-F2C2-4631-B225-EE1CA782309E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A8749CF0-F2C2-4631-B225-EE1CA782309E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A8749CF0-F2C2-4631-B225-EE1CA782309E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{779CBE31-159C-4912-A03E-5F2F01E438E8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{779CBE31-159C-4912-A03E-5F2F01E438E8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{779CBE31-159C-4912-A03E-5F2F01E438E8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{779CBE31-159C-4912-A03E-5F2F01E438E8}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

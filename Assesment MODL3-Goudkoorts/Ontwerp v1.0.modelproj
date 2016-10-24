@@ -7,7 +7,7 @@
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>{96bc582d-5c02-42a7-889b-a63d94c8fd97}</ProjectGuid>
     <ArchitectureToolsVersion>2.0.0.0</ArchitectureToolsVersion>
-    <Name>Assesment MODL3-Goudkoorts</Name>
+    <Name>Ontwerp v1.0</Name>
     <RootNamespace>Assesment MODL3-Goudkoorts</RootNamespace>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
@@ -32,12 +32,12 @@
       <SubType>Content</SubType>
     </Content>
     <Folder Include="ModelDefinition\" />
-    <Content Include="DKD.classdiagram">
+    <Content Include="DKD v1.0.classdiagram">
       <SubType>Content</SubType>
     </Content>
-    <Content Include="DKD.classdiagram.layout">
+    <Content Include="DKD v1.0.classdiagram.layout">
       <SubType>Content</SubType>
-      <DependentUpon>DKD.classdiagram</DependentUpon>
+      <DependentUpon>DKD v1.0.classdiagram</DependentUpon>
     </Content>
     <Content Include="ModelDefinition\Assesment MODL3-Goudkoorts.uml">
       <SubType>Content</SubType>

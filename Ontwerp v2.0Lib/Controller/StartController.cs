@@ -4,16 +4,17 @@
 //     Changes to this file will be lost if the code is regenerated.
 // </auto-generated>
 //------------------------------------------------------------------------------
-namespace Model
+namespace Controller
 {
 	using System;
 	using System.Collections.Generic;
 	using System.Linq;
 	using System.Text;
+	using View;
 
-	public class Track
+	public class StartController
 	{
-		public virtual Cart Cart
+		public virtual StartController StartView
 		{
 			get;
 			set;

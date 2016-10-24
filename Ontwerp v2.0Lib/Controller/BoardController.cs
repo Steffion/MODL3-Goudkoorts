@@ -15,12 +15,6 @@ namespace Controller
 
 	public class BoardController
 	{
-		public virtual Board Board
-		{
-			get;
-			set;
-		}
-
 		public virtual BoardView BoardView
 		{
 			get;
@@ -51,13 +45,11 @@ namespace Controller
 			set;
 		}
 
-        public BoardController()
-        {
-            Board = new Board();
-            BoardView = new BoardView(Board);
-            BoardView.Show();
-            Console.ReadKey();
-        }
+		public virtual Board Board
+		{
+			get;
+			set;
+		}
 
 	}
 }

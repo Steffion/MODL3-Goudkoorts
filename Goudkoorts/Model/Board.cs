@@ -13,6 +13,28 @@ namespace Model
 
 	public class Board
 	{
+        public Dictionary<string, Track> Tracks;
+
+        public Board()
+        {
+            Tracks = new Dictionary<string, Track>();
+
+            Tracks["0,0"] = new Track();
+            Tracks["1,0"] = new Track();
+            Tracks["2,0"] = new Track();
+            Tracks["3,0"] = new Track();
+            Tracks["4,0"] = new Track();
+            Tracks["5,0"] = new Track();
+            Tracks["6,0"] = new Track();
+            Tracks["7,0"] = new Track();
+            Tracks["8,0"] = new Track();
+            Tracks["9,0"] = new Track();
+            Tracks["10,0"] = new Track();
+            Tracks["11,0"] = new Track();
+            Tracks["12,0"] = new Track();
+            Tracks["13,0"] = new Track();
+        }
+
 		public virtual IEnumerable<Track> Track
 		{
 			get;
