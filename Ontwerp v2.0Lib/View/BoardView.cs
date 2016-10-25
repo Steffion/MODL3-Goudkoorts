@@ -25,8 +25,12 @@ namespace View
 
         public void Show()
         {
+            Console.WriteLine();
+
             for (int y = 0; y < 10; y++)
             {
+                Console.Write("   ");
+
                 for (int x = 0; x < 13; x++)
                 {
                     Field currentField = Board.Fields[x, y];
@@ -66,7 +70,46 @@ namespace View
                     }
                     else if (currentField is SwitchTrack)
                     {
-                        Console.Write("S");
+                        SwitchTrack track = (SwitchTrack)currentField;
+
+                        if (track.Id == 1)
+                        {
+                            Console.ForegroundColor = ConsoleColor.Yellow;
+                        }
+                        else if (track.Id == 2)
+                        {
+                            Console.ForegroundColor = ConsoleColor.Green;
+                        }
+                        else if (track.Id == 3)
+                        {
+                            Console.ForegroundColor = ConsoleColor.Red;
+                        }
+                        else if (track.Id == 4)
+                        {
+                            Console.ForegroundColor = ConsoleColor.Cyan;
+                        }
+                        else if (track.Id == 5)
+                        {
+                            Console.ForegroundColor = ConsoleColor.Magenta;
+                        }
+
+                        switch (track.SwitchType)
+                        {
+                            case SwitchType.FROM_UP:
+                                Console.Write("┘");
+                                break;
+                            case SwitchType.FROM_DOWN:
+                                Console.Write("┐");
+                                break;
+                            case SwitchType.TO_UP:
+                                Console.Write("└");
+                                break;
+                            case SwitchType.TO_DOWN:
+                                Console.Write("┌");
+                                break;
+                        }
+
+                        Console.ForegroundColor = ConsoleColor.Gray;
                     }
                     else if (currentField is YardTrack)
                     {

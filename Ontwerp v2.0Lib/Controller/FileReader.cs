@@ -61,9 +61,9 @@ namespace Ontwerp_v2._0Lib.Controller
                         case 'W':
                             fields[x + "," + y] = new Warehouse();
                             break;
-                        case 'S':
-                            fields[x + "," + y] = new SwitchTrack();
-                            break;
+                        //case 'S':
+                        //    fields[x + "," + y] = new SwitchTrack();
+                        //    break;
                         case '┐':
                             fields[x + "," + y] = new CurvedTrack(Direction.DOWN, Direction.LEFT);
                             break;

@@ -12,12 +12,30 @@ namespace Model
     using System.Linq;
     using System.Text;
 
+    public enum SwitchType
+    {
+        FROM_UP, FROM_DOWN, TO_UP, TO_DOWN
+    }
+
 	public class SwitchTrack : Track
 	{
-        public SwitchTrack()
+        public SwitchType SwitchType
+        {
+            get;
+            set;
+        }
+
+        public int Id
+        {
+            get;
+            set;
+        }
+
+        public SwitchTrack(SwitchType switchType, int id) 
             : base(Direction.UP)
         {
-
+            SwitchType = switchType;
+            Id = id;
         }
 	}
 }

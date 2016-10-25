@@ -88,10 +88,10 @@ namespace Model
             Fields[11, 4] = new Track(Direction.UP);
 
             // ROW 6
-            Fields[3, 5] = new SwitchTrack();
+            Fields[3, 5] = new SwitchTrack(SwitchType.TO_DOWN, 1);
             Fields[4, 5] = new Track(Direction.RIGHT);
-            Fields[5, 5] = new SwitchTrack();
-            Fields[9, 5] = new SwitchTrack();
+            Fields[5, 5] = new SwitchTrack(SwitchType.FROM_UP, 2);
+            Fields[9, 5] = new SwitchTrack(SwitchType.TO_UP, 3);
             Fields[10, 5] = new Track(Direction.RIGHT);
             Fields[11, 5] = new CurvedTrack(Direction.LEFT, Direction.UP);
 
@@ -106,9 +106,9 @@ namespace Model
             Fields[9, 6] = new CurvedTrack(Direction.LEFT, Direction.UP);
 
             // ROW 8
-            Fields[6, 7] = new SwitchTrack();
+            Fields[6, 7] = new SwitchTrack(SwitchType.TO_DOWN, 4);
             Fields[7, 7] = new Track(Direction.RIGHT);
-            Fields[8, 7] = new SwitchTrack();
+            Fields[8, 7] = new SwitchTrack(SwitchType.FROM_DOWN, 5);
 
             // ROW 9
             Fields[0, 8] = new Warehouse();
