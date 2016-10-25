@@ -6,19 +6,19 @@
 //------------------------------------------------------------------------------
 namespace Model
 {
-	using System;
-	using System.Collections.Generic;
-	using System.Linq;
-	using System.Text;
+    using Ontwerp_v2._0Lib.Model;
+    using System;
+    using System.Collections.Generic;
+    using System.Linq;
+    using System.Text;
 
-	public class Track : Field
+	public class EndTrack : Track
 	{
-		public virtual Cart Cart
-		{
-			get;
-			set;
-		}
+        public EndTrack()
+            : base(Direction.UP)
+        {
 
+        }
 	}
 }
 

@@ -6,13 +6,133 @@
 //------------------------------------------------------------------------------
 namespace View
 {
-	using System;
-	using System.Collections.Generic;
-	using System.Linq;
-	using System.Text;
+    using Goudkoorts.Model;
+    using Model;
+    using Ontwerp_v2._0Lib.Model;
+    using System;
+    using System.Collections.Generic;
+    using System.Linq;
+    using System.Text;
 
 	public class BoardView
 	{
+        public Board Board { get; set; }
+
+        public BoardView(Board board)
+        {
+            Board = board;
+        }
+
+        public void Show()
+        {
+            for (int y = 0; y < 10; y++)
+            {
+                for (int x = 0; x < 13; x++)
+                {
+                    Field currentField = Board.Fields[x, y];
+
+                    if (currentField is CurvedTrack)
+                    {
+                        CurvedTrack track = (CurvedTrack)currentField;
+
+                        if ((track.FacingFrom == Direction.LEFT || track.FacingTo == Direction.LEFT) &&
+                            (track.FacingFrom == Direction.UP || track.FacingTo == Direction.UP))
+                        {
+                            Console.Write("┘");
+                        }
+                        else if ((track.FacingFrom == Direction.LEFT || track.FacingTo == Direction.LEFT) &&
+                                (track.FacingFrom == Direction.DOWN || track.FacingTo == Direction.DOWN))
+                        {
+                            Console.Write("┐");
+                        }
+                        else if ((track.FacingFrom == Direction.RIGHT || track.FacingTo == Direction.RIGHT) &&
+                                (track.FacingFrom == Direction.UP || track.FacingTo == Direction.UP))
+                        {
+                            Console.Write("└");
+                        }
+                        else if ((track.FacingFrom == Direction.RIGHT || track.FacingTo == Direction.RIGHT) &&
+                                (track.FacingFrom == Direction.DOWN || track.FacingTo == Direction.DOWN))
+                        {
+                            Console.Write("┌");
+                        }
+                    }
+                    else if (currentField is DockTrack)
+                    {
+                        Console.Write("─");
+                    }
+                    else if (currentField is EndTrack)
+                    {
+                        Console.Write("─");
+                    }
+                    else if (currentField is SwitchTrack)
+                    {
+                        Console.Write("S");
+                    }
+                    else if (currentField is YardTrack)
+                    {
+                        Console.ForegroundColor = ConsoleColor.DarkGreen;
+                        Console.Write("─");
+                        Console.ForegroundColor = ConsoleColor.Gray;
+                    }
+                    else if (currentField is DockTrack)
+                    {
+                        Console.Write("D");
+                    }
+                    else if (currentField is SeaRoute)
+                    {
+                        Console.ForegroundColor = ConsoleColor.Blue;
+                        Console.Write("~");
+                        Console.ForegroundColor = ConsoleColor.Gray;
+                    }
+                    else if (currentField is EmptyField)
+                    {
+                        Console.Write(" ");
+                    }
+                    else if (currentField is Warehouse)
+                    {
+                        Console.Write("W");
+                    }
+                    else if (currentField is Track)
+                    {
+                        if (((Track)currentField).Direction == Direction.UP ||
+                            ((Track)currentField).Direction == Direction.DOWN)
+                        {
+                            Console.Write("│");
+                        }
+                        else
+                        {
+                            Console.Write("─");
+                        }
+                    }
+                    
+                }
+
+                Console.WriteLine();
+            }
+        }
+            
+        //    Field originField = Board.OriginField;
+        //    Field currentField = originField;
+        //    int row = 0;
+
+        //    while (currentField.Below != null)
+        //    {
+        //        for (int i = row; i > 0; i--)
+        //        {
+        //            currentField = originField;
+        //            currentField = currentField.Below;
+        //        }
+
+        //        while (currentField.Right != null)
+        //        {
+        //            currentField = currentField.Right;
+
+        //           
+        //        }
+
+        //        row++;
+        //    }
+        //}
 	}
 }
 

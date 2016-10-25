@@ -6,13 +6,19 @@
 //------------------------------------------------------------------------------
 namespace Model
 {
-	using System;
-	using System.Collections.Generic;
-	using System.Linq;
-	using System.Text;
+    using Ontwerp_v2._0Lib.Model;
+    using System;
+    using System.Collections.Generic;
+    using System.Linq;
+    using System.Text;
 
-	public class DockTrack : Track
+	public class SwitchTrack : Track
 	{
+        public SwitchTrack()
+            : base(Direction.UP)
+        {
+
+        }
 	}
 }
 

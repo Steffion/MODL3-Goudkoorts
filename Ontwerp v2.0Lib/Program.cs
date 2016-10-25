@@ -12,6 +12,8 @@ namespace Goudkoorts
         static void Main(string[] args)
         {
             BoardController boardC = new BoardController();
+            boardC.BoardView.Show();
+            Console.ReadKey();
         }
     }
 }

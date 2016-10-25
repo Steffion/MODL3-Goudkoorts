@@ -6,43 +6,32 @@
 //------------------------------------------------------------------------------
 namespace Model
 {
-	using System;
-	using System.Collections.Generic;
-	using System.Linq;
-	using System.Text;
+    using Ontwerp_v2._0Lib.Model;
+    using System;
+    using System.Collections.Generic;
+    using System.Linq;
+    using System.Text;
 
-	public abstract class Field
+	public class CurvedTrack : Track
 	{
-        public Field Above
+        public CurvedTrack(Direction facingFrom, Direction facingTo)
+            : base(facingTo)
+        {
+            FacingFrom = facingFrom;
+            FacingTo = facingTo;
+        }
+
+        public Direction FacingTo
         {
             get;
             set;
         }
 
-        public Field Right
+        public Direction FacingFrom
         {
             get;
             set;
         }
-
-        public Field Below
-        {
-            get;
-            set;
-        }
-
-        public Field Left
-        {
-            get;
-            set;
-        }
-
-		public virtual MoveableObject MoveableObject
-		{
-			get;
-			set;
-		}
-
 	}
 }
 

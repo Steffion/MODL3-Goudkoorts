@@ -6,12 +6,13 @@
 //------------------------------------------------------------------------------
 namespace Controller
 {
-	using Model;
-	using System;
-	using System.Collections.Generic;
-	using System.Linq;
-	using System.Text;
-	using View;
+    using Model;
+    using Ontwerp_v2._0Lib.Controller;
+    using System;
+    using System.Collections.Generic;
+    using System.Linq;
+    using System.Text;
+    using View;
 
 	public class BoardController
 	{
@@ -51,6 +52,11 @@ namespace Controller
 			set;
 		}
 
+        public BoardController()
+        {
+            Board = new Board();
+            BoardView = new BoardView(Board);
+        }
 	}
 }
 

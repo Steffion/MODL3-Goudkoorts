@@ -6,10 +6,13 @@
 //------------------------------------------------------------------------------
 namespace Model
 {
-	using System;
-	using System.Collections.Generic;
-	using System.Linq;
-	using System.Text;
+    using Goudkoorts.Model;
+    using Ontwerp_v2._0Lib.Controller;
+    using Ontwerp_v2._0Lib.Model;
+    using System;
+    using System.Collections.Generic;
+    using System.Linq;
+    using System.Text;
 
 	public class Board
 	{
@@ -19,12 +22,296 @@ namespace Model
 			set;
 		}
 
-		public virtual IEnumerable<Field> Field
-		{
-			get;
-			set;
-		}
+        public Field OriginField
+        {
+            get;
+            set;
+        }
 
+        public Field[,] Fields
+        {
+            get;
+            set;
+        }
+
+        public Board()
+        {
+            // INIT
+            Fields = new Field[13, 10];
+
+            for (int y = 0; y < 10; y++)
+            {
+                for (int x = 0; x < 13; x++)
+                {
+                    Fields[x, y] = new EmptyField();
+                }
+            }
+
+
+            // ROW 1 & 2
+            for (int y = 0; y < 2; y++)
+            {
+                for (int x = 0; x < 13; x++)
+                {    
+                    Fields[x, y] = new SeaRoute();
+                }
+            }
+
+
+            // ROW 3
+            Fields[0, 2] = new EndTrack();
+            Fields[1, 2] = new Track(Direction.LEFT);
+            Fields[2, 2] = new Track(Direction.LEFT);
+            Fields[3, 2] = new Track(Direction.LEFT);
+            Fields[4, 2] = new Track(Direction.LEFT);
+            Fields[5, 2] = new Track(Direction.LEFT);
+            Fields[6, 2] = new Track(Direction.LEFT);
+            Fields[7, 2] = new Track(Direction.LEFT);
+            Fields[8, 2] = new Track(Direction.LEFT);
+            Fields[9, 2] = new DockTrack(Direction.LEFT);
+            Fields[10, 2] = new Track(Direction.LEFT);
+            Fields[11, 2] = new CurvedTrack(Direction.DOWN, Direction.LEFT);
+            
+            // ROW 4
+            Fields[11, 3] = new Track(Direction.UP);
+
+            // ROW 5
+            Fields[0, 4] = new Warehouse();
+            Fields[1, 4] = new Track(Direction.RIGHT);
+            Fields[2, 4] = new Track(Direction.RIGHT);
+            Fields[3, 4] = new CurvedTrack(Direction.LEFT, Direction.DOWN);
+            Fields[5, 4] = new CurvedTrack(Direction.DOWN, Direction.RIGHT);
+            Fields[6, 4] = new Track(Direction.RIGHT);
+            Fields[7, 4] = new Track(Direction.RIGHT);
+            Fields[8, 4] = new Track(Direction.RIGHT);
+            Fields[9, 4] = new CurvedTrack(Direction.LEFT, Direction.DOWN);
+            Fields[11, 4] = new Track(Direction.UP);
+
+            // ROW 6
+            Fields[3, 5] = new SwitchTrack();
+            Fields[4, 5] = new Track(Direction.RIGHT);
+            Fields[5, 5] = new SwitchTrack();
+            Fields[9, 5] = new SwitchTrack();
+            Fields[10, 5] = new Track(Direction.RIGHT);
+            Fields[11, 5] = new CurvedTrack(Direction.LEFT, Direction.UP);
+
+            // ROW 7
+            Fields[0, 6] = new Warehouse();
+            Fields[1, 6] = new Track(Direction.RIGHT);
+            Fields[2, 6] = new Track(Direction.RIGHT);
+            Fields[3, 6] = new CurvedTrack(Direction.LEFT, Direction.UP);
+            Fields[5, 6] = new CurvedTrack(Direction.UP, Direction.RIGHT);
+            Fields[6, 6] = new CurvedTrack(Direction.LEFT, Direction.DOWN);
+            Fields[8, 6] = new CurvedTrack(Direction.DOWN, Direction.RIGHT);
+            Fields[9, 6] = new CurvedTrack(Direction.LEFT, Direction.UP);
+
+            // ROW 8
+            Fields[6, 7] = new SwitchTrack();
+            Fields[7, 7] = new Track(Direction.RIGHT);
+            Fields[8, 7] = new SwitchTrack();
+
+            // ROW 9
+            Fields[0, 8] = new Warehouse();
+            Fields[1, 8] = new Track(Direction.RIGHT);
+            Fields[2, 8] = new Track(Direction.RIGHT);
+            Fields[3, 8] = new Track(Direction.RIGHT);
+            Fields[4, 8] = new Track(Direction.RIGHT);
+            Fields[5, 8] = new Track(Direction.RIGHT);
+            Fields[6, 8] = new CurvedTrack(Direction.LEFT, Direction.UP);
+            Fields[8, 8] = new CurvedTrack(Direction.UP, Direction.RIGHT);
+            Fields[9, 8] = new Track(Direction.RIGHT);
+            Fields[10, 8] = new Track(Direction.RIGHT);
+            Fields[11, 8] = new CurvedTrack(Direction.LEFT, Direction.DOWN);
+
+            // ROW 10
+            Fields[1, 9] = new YardTrack();
+            Fields[2, 9] = new YardTrack();
+            Fields[3, 9] = new YardTrack();
+            Fields[4, 9] = new YardTrack();
+            Fields[5, 9] = new YardTrack();
+            Fields[6, 9] = new YardTrack();
+            Fields[7, 9] = new YardTrack();
+            Fields[8, 9] = new YardTrack();
+            Fields[9, 9] = new Track(Direction.LEFT);
+            Fields[10, 9] = new Track(Direction.LEFT);
+            Fields[11, 9] = new CurvedTrack(Direction.UP, Direction.LEFT);
+
+            //OriginField = new SeaRoute();
+            //Field currentField = OriginField;
+
+            //for (int i = 2; i <= 13; i++)
+            //{
+            //    currentField.Right = new SeaRoute();
+            //    currentField = currentField.Right;
+            //}
+
+            //currentField.Above = OriginField;
+            //currentField.Below = new SeaRoute();
+            //currentField = currentField.Below;
+
+            //for (int i = 12; i > 0; i--)
+            //{
+            //    currentField.Left = new SeaRoute();
+            //    currentField = currentField.Left;
+            //}
+
+            //currentField.Below = new EndTrack();
+            //currentField = currentField.Below;
+
+            //for (int i = 1; i <= 8; i++)
+            //{
+            //    currentField.Right = new Track(Direction.LEFT);
+            //    currentField = currentField.Right;
+            //}
+
+            //currentField.Right = new DockTrack(Direction.LEFT);
+            //currentField = currentField.Right;
+            //currentField.Right = new Track(Direction.LEFT);
+            //currentField = currentField.Right;
+            //currentField.Right = new CurvedTrack(Direction.DOWN, Direction.LEFT);
+            //currentField = currentField.Right;
+            //currentField.Right = new EmptyField();
+            //currentField = currentField.Right;
+
+
+
+
+
+            //Field a1 = new SeaRoute();
+            //Field a2 = new SeaRoute();
+            //Field a3 = new SeaRoute();
+            //Field a4 = new SeaRoute();
+            //Field a5 = new SeaRoute();
+            //Field a6 = new SeaRoute();
+            //Field a7 = new SeaRoute();
+            //Field a8 = new SeaRoute();
+            //Field a9 = new SeaRoute();
+            //Field a10 = new SeaRoute();
+            //Field a11 = new SeaRoute();
+            //Field a12 = new SeaRoute();
+            //Field a13 = new SeaRoute();
+
+            //Field b1 = new SeaRoute();
+            //Field b2 = new SeaRoute();
+            //Field b3 = new SeaRoute();
+            //Field b4 = new SeaRoute();
+            //Field b5 = new SeaRoute();
+            //Field b6 = new SeaRoute();
+            //Field b7 = new SeaRoute();
+            //Field b8 = new SeaRoute();
+            //Field b9 = new SeaRoute();
+            //Field b10 = new SeaRoute();
+            //Field b11 = new SeaRoute();
+            //Field b12 = new SeaRoute();
+            //Field b13 = new SeaRoute();
+
+            //Field c1 = new EndTrack();
+            //Field c2 = new Track(Direction.LEFT);
+            //Field c3 = new Track(Direction.LEFT);
+            //Field c4 = new Track(Direction.LEFT);
+            //Field c5 = new Track(Direction.LEFT);
+            //Field c6 = new Track(Direction.LEFT);
+            //Field c7 = new Track(Direction.LEFT);
+            //Field c8 = new Track(Direction.LEFT);
+            //Field c9 = new Track(Direction.LEFT);
+            //Field c10 = new DockTrack(Direction.LEFT);
+            //Field c11 = new Track(Direction.LEFT);
+            //Field c12 = new Track(Direction.LEFT);
+            //Field c13 = new EmptyField();
+
+            //Field d1 = new EmptyField();
+            //Field d2 = new EmptyField(); 
+            //Field d3 = new EmptyField();
+            //Field d4 = new EmptyField();
+            //Field d5 = new EmptyField();
+            //Field d6 = new EmptyField();
+            //Field d7 = new EmptyField();
+            //Field d8 = new EmptyField();
+            //Field d9 = new EmptyField();
+            //Field d10 = new EmptyField();
+            //Field d11 = new EmptyField();
+            //Field d12 = new Track(Direction.DOWN);
+            //Field d13 = new EmptyField();
+
+            //Field e1 = new Warehouse();
+            //Field e2 = new Track(Direction.RIGHT);
+            //Field e3 = new Track(Direction.RIGHT);
+            //Field e4 = new CurvedTrack(Direction.LEFT, Direction.DOWN);
+            //Field e5 = new EmptyField();
+            //Field e6 = new CurvedTrack(Direction.DOWN, Direction.RIGHT);
+            //Field e7 = new Track(Direction.RIGHT);
+            //Field e8 = new Track(Direction.RIGHT);
+            //Field e9 = new Track(Direction.RIGHT);
+            //Field e10 = new CurvedTrack(Direction.LEFT, Direction.DOWN);
+            //Field e11 = new EmptyField();
+            //Field e12 = new Track(Direction.UP);
+            //Field e13 = new EmptyField();
+
+            //    Field d1 = 
+            //Field d2 = 
+            //Field d3 = 
+            //Field d4 = 
+            //Field d5 = 
+            //Field d6 = 
+            //Field d7 = 
+            //Field d8 = 
+            //Field d9 = 
+            //Field d10 = 
+            //Field d11 = 
+            //Field d12 = 
+            //Field d13 = 
+
+            //    Field d1 = 
+            //Field d2 = 
+            //Field d3 = 
+            //Field d4 = 
+            //Field d5 = 
+            //Field d6 = 
+            //Field d7 = 
+            //Field d8 = 
+            //Field d9 = 
+            //Field d10 = 
+            //Field d11 = 
+            //Field d12 = 
+            //Field d13 = 
+
+            //    Field d1 = 
+            //Field d2 = 
+            //Field d3 = 
+            //Field d4 = 
+            //Field d5 = 
+            //Field d6 = 
+            //Field d7 = 
+            //Field d8 = 
+            //Field d9 = 
+            //Field d10 = 
+            //Field d11 = 
+            //Field d12 = 
+            //Field d13 = 
+
+            //OriginField = a1;
+
+            //a1.Above = null;
+            //a1.Right = a2;
+            //a1.Below = b1;
+            //a1.Left = null;
+
+            //a2.Above = null;
+            //a2.Right = a3;
+            //a2.Below = b2;
+            //a2.Left = a1;
+
+            //a1.Above = null;
+            //a1.Right = a2;
+            //a1.Below = b1;
+            //a1.Left = null;
+
+            //a1.Above = null;
+            //a1.Right = a2;
+            //a1.Below = b1;
+            //a1.Left = null;
+
+        }
 	}
 }
 
